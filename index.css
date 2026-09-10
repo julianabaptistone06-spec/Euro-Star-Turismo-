@@ -1,0 +1,372 @@
+
+
+:root {
+    --cor-primaria: #00b8a9;          /* verde-petróleo (troca do azul #008cff) */
+    --cor-primaria-escura: #00897b;   /* borda do logo / detalhes */
+    --cor-hover: #01d6c5;             /* hover dos links do menu */
+    --cor-destaque: #f7b731;          /* dourado para chamadas */
+    --fundo-card: rgba(0, 0, 0, 0.70);
+    --fundo-nav: rgba(0, 0, 0, 0.65);
+    --fundo-footer: rgba(0, 0, 0, 0.75);
+    --raio-card: 12px;
+}
+
+body {
+    margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* fundo com foto real de destino + escurecimento para legibilidade */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("./img/fundo4.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+}
+
+
+.container {
+    padding: 0px 50px;
+}
+
+
+nav {
+    padding: 10px 0;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    list-style: none;
+    padding: 16px;
+    margin: 0;
+
+    background-color: var(--fundo-nav);
+    border-radius: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-primaria);
+}
+
+
+.center {
+    text-align: center;
+    margin-top: 30px;
+}
+
+header img {
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 5px solid var(--cor-primaria-escura);
+
+    box-shadow: 0 0 20px rgba(0, 184, 169, 0.8);
+}
+
+
+h1 {
+    color: var(--cor-primaria);
+    text-align: center;
+
+    font-size: 36px;
+    margin-bottom: 5px;
+
+    text-shadow: 2px 2px 5px black;
+}
+
+h2 {
+    text-align: center;
+    font-size: 20px;
+
+    margin-top: 5px;
+    margin-bottom: 40px;
+
+    text-shadow: 2px 2px 5px black;
+}
+
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: var(--fundo-card);
+
+    padding: 20px;
+    margin-bottom: 20px;
+
+    border-radius: var(--raio-card);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+section h3 {
+    color: var(--cor-primaria);
+    font-size: 24px;
+
+    margin-top: 0;
+}
+
+section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+section a {
+    color: var(--cor-destaque);
+}
+
+
+/* ==== Grid de destinos (estilo novo sobre a base) ==== */
+.grid-destinos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card-destino {
+    background-color: var(--fundo-card);
+    border-radius: var(--raio-card);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+.card-destino:hover {
+    transform: translateY(-4px);
+}
+
+.card-destino img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-destino .info {
+    padding: 15px;
+}
+
+.card-destino h3 {
+    margin: 0 0 8px;
+    color: var(--cor-primaria);
+    font-size: 20px;
+}
+
+.card-destino p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+}
+
+.card-destino a {
+    color: var(--cor-destaque);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-destino a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==== Lista de pacotes (reuso da .lista-precos da base) ==== */
+.lista-precos {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: block;
+    background: transparent;
+}
+
+.lista-precos li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 15px;
+}
+
+.lista-precos li:last-child {
+    border-bottom: none;
+}
+
+.lista-precos strong {
+    color: var(--cor-destaque);
+    white-space: nowrap;
+}
+
+.lista-precos .inclui {
+    width: 100%;
+    font-size: 13px;
+    color: #cfd8dc;
+    margin-top: 4px;
+}
+
+
+/* ==== Formulário de contato (estilo novo) ==== */
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 15px;
+}
+
+.form-contato label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: -8px;
+}
+
+.form-contato input,
+.form-contato textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+}
+
+.form-contato textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-enviar {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+
+    background-color: var(--cor-primaria-escura);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: var(--cor-primaria);
+}
+
+
+/* ==== Footer (igual à base, só muda a cor do hover) ==== */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 40px;
+    padding: 25px;
+
+    background-color: var(--fundo-footer);
+
+    border-radius: var(--raio-card);
+}
+
+footer a {
+    margin: 0 20px;
+
+    text-align: center;
+
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+footer img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+
+    transition: 0.3s;
+}
+
+footer p {
+    margin: 5px 0 0;
+
+    font-weight: bold;
+}
+
+footer a:hover {
+    transform: scale(1.1);
+    color: var(--cor-primaria);
+}
+
+footer img:hover {
+    transform: scale(1.15);
+}
+
+
+/* ==== Responsivo para celular (novo) ==== */
+@media (max-width: 700px) {
+    .container {
+        padding: 0px 16px;
+    }
+
+    ul {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer a {
+        margin: 0;
+    }
+}
