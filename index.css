@@ -17,7 +17,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 
     /* fundo com foto real de destino + escurecimento para legibilidade */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("./img/fundo4.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("fundo4.png");
 
     background-size: cover;
     background-position: center;
